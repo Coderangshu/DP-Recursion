@@ -2,8 +2,6 @@
 #include<bits/stdc++.h>
 #define MOD 1000000007
 #define llint long long int
-#define max(a,b) (a>=b?a:b)
-#define min(a,b) (a<=b?a:b)
 using namespace std;
  
 vector<int> graph[100001];
@@ -76,6 +74,8 @@ int main()
    }
    memset(dp,-1,sizeof(dp));
    DFS(1);
+   // Here multiplied by two to solve for both the colors
+   // as both give the same result so solved only ones
    llint ans=(memoization(1,0,0)*2)%MOD;
    cout<<ans<<endl;
    return 0;
