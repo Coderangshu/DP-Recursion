@@ -1,3 +1,6 @@
+// Question link
+// https://www.hackerrank.com/challenges/abbr/problem
+
 #include <bits/stdc++.h>
 
 using namespace std;

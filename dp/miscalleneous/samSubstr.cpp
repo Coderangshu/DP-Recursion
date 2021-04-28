@@ -1,3 +1,6 @@
+// Question link
+// https://www.hackerrank.com/challenges/sam-and-substrings/problem
+
 #include <bits/stdc++.h>
 #define llint long long int
 #define MOD 1000000007
