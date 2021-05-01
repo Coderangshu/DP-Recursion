@@ -43,7 +43,6 @@ llint memoization(int root, int color, int streak){
     for(int i=0;i<graph[root].size();i++){
         int node = graph[root][i];
         if(node!=parent[root]){
-            valid = 0;
             llint not_same = 0,same = 0;
             // not_same contains the number of configurations wherein
             // the current node has different color than its parent node
@@ -53,7 +52,7 @@ llint memoization(int root, int color, int streak){
             // current node has same color as its parent node 
             same=(dp[node][color][1]==-1)?
                 memoization(node,color,1):dp[node][color][1];
-            valid+=same+not_same;
+            valid=same+not_same;
             invalid=(invalid*not_same)%MOD;
             ans=(ans*valid)%MOD;
         }
