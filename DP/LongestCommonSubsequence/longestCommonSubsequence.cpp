@@ -41,13 +41,31 @@ int memoization(int x, int y, string s1, string s2){
 
 int topDown(int x, int y, string s1, string s2){
     int dp[x+1][y+1];
+
+    // to print the lcs uncomment the code line below
+    // keeping track of last character added's index
+    // i should be not same as last added's i
+    // j should be greater than the last added's j
+    // int li = -1, lj = -1;
+    // to store the lcs string
+    // string ans = "";
+
     for(int i=0;i<x+1;i++){
         for(int j=0;j<y+1;j++){
             if(i==0 or j==0) dp[i][j] = 0;
-            else if(s1[i-1]==s2[j-1]) dp[i][j] = 1+dp[i-1][j-1];
+            else if(s1[i-1]==s2[j-1]){
+                dp[i][j] = 1+dp[i-1][j-1];
+                // if(i-1!=li and j-1>lj){
+                //    ans.push_back(s1[i-1]);
+                //    li = i-1;
+                //    lj = j-1;
+                // }
+            }
             else dp[i][j] = max(dp[i-1][j],dp[i][j-1]);
         }
     }
+    // print the lcs
+    // cout<<ans<<endl;
     return dp[x][y];
 }
 
